@@ -123,10 +123,16 @@ body {
   font-size: 1.6rem;
 }
 
-::selection, ::-moz-selection {
-  color: var(--color-brand-700);
-  background: #333;
+::selection {
+  color: var(--color-grey-700);
+  background: var(--color-brand-700);
 }
+
+::-moz-selection {
+  color: var(--color-grey-700);
+  background: var(--color-brand-700);
+}
+
 
 ::-webkit-scrollbar {
   width: 12px;

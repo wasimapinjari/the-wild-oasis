@@ -24,7 +24,7 @@ export const getToday = function (options = {}) {
   return today.toISOString();
 };
 
-export const getTodaySep12_2023 = function (options = {}) {
+export const getEndSetDate = function (options = {}) {
   const today = new Date("Sep 12 2023");
 
   // This is necessary to compare with created_at from Supabase, because it it not at 0.0.0.0, so we need to set the date to be END of the day when we compare it with earlier dates

@@ -27,8 +27,8 @@ function SalesChart({ bookings, numDays }) {
   const { isDarkMode } = useDarkMode();
 
   const allDates = eachDayOfInterval({
-    start: subDays(new Date(), numDays - 1),
-    end: new Date(),
+    start: subDays(new Date("Sep 12 2023"), numDays - 1),
+    end: new Date("Sep 12 2023"),
   });
 
   const data = allDates.map((date) => {

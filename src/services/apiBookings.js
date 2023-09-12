@@ -1,4 +1,4 @@
-import { getToday, getTodaySep12_2023 } from "../utils/helpers";
+import { getEndSetDate } from "../utils/helpers";
 import supabase from "./supabase";
 import { PAGE_SIZE } from "../utils/constants";
 
@@ -57,7 +57,7 @@ export async function getBookingsAfterDate(date) {
     .from("bookings")
     .select("created_at, totalPrice, extrasPrice")
     .gte("created_at", date)
-    .lte("created_at", getToday({ end: true }));
+    .lte("created_at", getEndSetDate({ end: true }));
 
   if (error) {
     console.error(error);
@@ -73,7 +73,7 @@ export async function getStaysAfterDate(date) {
     .from("bookings")
     .select("*, guests(fullName)")
     .gte("startDate", date)
-    .lte("startDate", getToday());
+    .lte("startDate", getEndSetDate({ end: true }));
 
   if (error) {
     console.error(error);
@@ -89,7 +89,7 @@ export async function getStaysTodayActivity() {
     .from("bookings")
     .select("*, guests(fullName, nationality, countryFlag)")
     .or(
-      `and(status.eq.unconfirmed,startDate.eq.${getTodaySep12_2023()}),and(status.eq.checked-in,endDate.eq.${getToday()})`
+      `and(status.eq.unconfirmed,startDate.eq.${getEndSetDate()}),and(status.eq.checked-in,endDate.eq.${getEndSetDate()})`
     )
     .order("created_at");
 

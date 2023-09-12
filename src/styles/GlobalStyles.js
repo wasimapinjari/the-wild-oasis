@@ -125,12 +125,12 @@ body {
 
 ::selection {
   color: var(--color-grey-700);
-  background: var(--color-brand-700);
+  background: var(--color-indigo-100);
 }
 
 ::-moz-selection {
   color: var(--color-grey-700);
-  background: var(--color-brand-700);
+  background: var(--color-indigo-100);
 }
 
 

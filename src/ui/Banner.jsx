@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledBanner = styled.div`
-  color: #F8F0E5;
+  color: var(--color-grey-700);
 `;
 
 function Banner() {
